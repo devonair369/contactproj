@@ -56,6 +56,7 @@ const Login = props => {
           <input
             id='email'
             type='email'
+            autoFocus
             name='email'
             value={email}
             onChange={onChange}
@@ -73,7 +74,11 @@ const Login = props => {
             required
           />
         </div>
-        <input type='submit' value='Login' className='btn btn-primary btn-block' />
+        <input
+          type='submit'
+          value='Login'
+          className='btn btn-primary btn-block'
+        />
       </form>
     </div>
   );

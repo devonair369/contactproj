@@ -61,6 +61,7 @@ const Register = props => {
           <input
             id='name'
             type='text'
+            autoFocus
             name='name'
             value={name}
             onChange={onChange}
@@ -102,7 +103,11 @@ const Register = props => {
             minLength='6'
           />
         </div>
-        <input type='submit' value='Register' className='btn btn-primary btn-block' />
+        <input
+          type='submit'
+          value='Register'
+          className='btn btn-primary btn-block'
+        />
       </form>
     </div>
   );
