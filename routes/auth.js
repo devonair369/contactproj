@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+// const redis = require('redis');
+// const JWTR = require('jwt-redis').default
+// const redisClient = redis.createClient()
+// const jwtr = new JWTR(redisClient);
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const auth = require('../middleware/auth');
@@ -61,7 +65,7 @@ router.post(
         payload,
         config.get('jwtSecret'),
         {
-          expiresIn: 360000
+          expiresIn: '1h'
         },
         (err, token) => {
           if (err) throw err;

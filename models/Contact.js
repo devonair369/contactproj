@@ -1,30 +1,32 @@
 const mongoose = require('mongoose');
 
-const ContactSchema = mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'users'
+const ContactSchema = mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'users'
+    },
+    name: {
+      type: String,
+      require: true
+    },
+    email: {
+      type: String,
+      require: true
+    },
+    phone: {
+      type: String,
+      require: true
+    },
+    comment: {
+      type: String
+    },
+    type: {
+      type: String,
+      default: 'personal'
+    }
   },
-  name: {
-    type: String,
-    require: true
-  },
-  email: {
-    type: String,
-    require: true
-  },
-  phone: {
-    type: String,
-    require: true
-  },
-  type: {
-    type: String,
-    default: 'personal'
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  }
-});
+  { timestamps: true }
+);
 
 module.exports = Contact = mongoose.model('contact', ContactSchema);

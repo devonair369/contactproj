@@ -6,34 +6,34 @@ const ContactForm = () => {
 
   const { addContact, updateContact, clearCurrent, current } = contactContext;
 
-  useEffect(
-    () => {
-      if (current !== null) {
-        setContact(current);
-      } else {
-        setContact({
-          name: '',
-          email: '',
-          phone: '',
-          type: 'personal'
-        });
-      }
-    },
-    [contactContext, current]
-  );
+  useEffect(() => {
+    if (current !== null) {
+      setContact(current);
+    } else {
+      setContact({
+        name: '',
+        email: '',
+        phone: '',
+        comment: '',
+        type: 'personal'
+      });
+    }
+  }, [contactContext, current]);
 
   const [contact, setContact] = useState({
     name: '',
     email: '',
     phone: '',
+    comment: '',
     type: 'personal'
   });
 
-  const { name, email, phone, type } = contact;
+  const { name, email, phone, comment, type } = contact;
 
-  const onChange = e => setContact({ ...contact, [e.target.name]: e.target.value });
+  const onChange = (e) =>
+    setContact({ ...contact, [e.target.name]: e.target.value });
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (current === null) {
       addContact(contact);
@@ -49,7 +49,9 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h2 className='text-primary'>{current ? 'Edit Contact' : 'Add Contact'}</h2>
+      <h2 className='text-primary'>
+        {current ? 'Edit Contact' : 'Add Contact'}
+      </h2>
       <input
         type='text'
         placeholder='Name'
@@ -69,6 +71,14 @@ const ContactForm = () => {
         placeholder='Phone'
         name='phone'
         value={phone}
+        onChange={onChange}
+      />
+      <textarea
+        type='text'
+        placeholder='Comments'
+        name='comment'
+        rows={3}
+        value={comment}
         onChange={onChange}
       />
       <h5>Contact Type</h5>
@@ -95,12 +105,13 @@ const ContactForm = () => {
           className='btn btn-primary btn-block'
         />
       </div>
-      {current &&
+      {current && (
         <div>
           <button className='btn btn-light btn-block' onClick={clearAll}>
             Clear
           </button>
-        </div>}
+        </div>
+      )}
     </form>
   );
 };

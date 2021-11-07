@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+// const redis = require('redis');
+// const JWTR = require('jwt-redis').default
+// const redisClient = redis.createClient()
+// const jwtr = new JWTR(redisClient);
 const config = require('config');
 const { check, validationResult } = require('express-validator');
 
@@ -15,7 +19,10 @@ router.post(
   [
     check('name', 'Please add name').not().isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
-    check('password', 'Please enter a password with 6 or more characters').isLength({
+    check(
+      'password',
+      'Please enter a password with 6 or more characters'
+    ).isLength({
       min: 6
     })
   ],
@@ -56,7 +63,7 @@ router.post(
         payload,
         config.get('jwtSecret'),
         {
-          expiresIn: 360000
+          expiresIn: '1h'
         },
         (err, token) => {
           if (err) throw err;

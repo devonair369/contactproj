@@ -23,12 +23,11 @@ const Navbar = ({ title, icon }) => {
 
   const authLinks = (
     <Fragment>
-      <li>
-        Hello {user && user.name}
-      </li>
+      <li>Hello {user && user.name}</li>
       <li>
         <a onClick={onLogout} href='/'>
-          <i className='fas fa-sign-out-alt' /> <span className='hide-sm'>Logout</span>
+          <i className='fas fa-sign-out-alt' />{' '}
+          <span className='hide-sm'>Logout</span>
         </a>
       </li>
     </Fragment>
@@ -52,9 +51,7 @@ const Navbar = ({ title, icon }) => {
           <i className={icon} /> {title}
         </Link>
       </h1>
-      <ul>
-        {isAuthenticated ? authLinks : guestLinks}
-      </ul>
+      <ul>{isAuthenticated ? authLinks : guestLinks}</ul>
     </div>
   );
 };
@@ -65,7 +62,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: 'Contact Keeper',
+  title: 'My Contacts',
   icon: 'fas fa-id-card-alt'
 };
 
