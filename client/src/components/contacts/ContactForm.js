@@ -81,6 +81,7 @@ const ContactForm = () => {
         value={comment}
         onChange={onChange}
       />
+      <br></br>
       <h5>Contact Type</h5>
       <input
         type='radio'

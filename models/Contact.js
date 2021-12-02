@@ -19,7 +19,8 @@ const ContactSchema = mongoose.Schema(
       require: true
     },
     comment: {
-      type: String
+      type: String,
+      default: ' '
     },
     type: {
       type: String,
