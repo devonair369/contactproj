@@ -12,7 +12,7 @@ const Contacts = () => {
   useEffect(() => {
     getContacts();
     // eslint-disable-next-line
-  }, []);
+  }, [])
 
   if (contacts !== null && contacts.length === 0 && !loading) {
     return <h4>Please add a contact</h4>;
@@ -24,12 +24,20 @@ const Contacts = () => {
         ? <TransitionGroup>
           {filtered !== null
               ? filtered.map(contact =>
-                <CSSTransition key={contact._id} timeout={500} classNames='item'>
+                <CSSTransition
+                  key={contact._id}
+                  timeout={500}
+                  classNames='item'
+                  >
                   <ContactItem contact={contact} />
                 </CSSTransition>
                 )
               : contacts.map(contact =>
-                <CSSTransition key={contact._id} timeout={500} classNames='item'>
+                <CSSTransition
+                  key={contact._id}
+                  timeout={500}
+                  classNames='item'
+                  >
                   <ContactItem contact={contact} />
                 </CSSTransition>
                 )}
