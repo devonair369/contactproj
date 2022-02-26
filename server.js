@@ -1,3 +1,7 @@
+// import express from 'express';
+// import connectDB from './config/db.js';
+// import morgan from 'morgan';
+
 const express = require('express');
 const connectDB = require('./config/db');
 const morgan = require('morgan');
@@ -12,7 +16,6 @@ app.use(express.json({ extended: false }));
 app.use(morgan('dev'));
 
 // Define routes
-
 app.use('/api/users', require('./routes/users'));
 app.use('/api/contacts', require('./routes/contacts'));
 app.use('/api/auth', require('./routes/auth'));
