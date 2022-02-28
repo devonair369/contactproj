@@ -1,4 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://ermobiprd:ermobi369@cluster0.46soj.azure.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "banana"
-}
