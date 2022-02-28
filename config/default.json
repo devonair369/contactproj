@@ -1,5 +1,4 @@
 {
     "mongoURI": "Your mongo db ID",
-    "ipData": "Your ip data key",
     "jwtSecret": "Your jwtSecret"
 }
