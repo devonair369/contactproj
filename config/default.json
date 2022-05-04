@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD
     "mongoURI": "mongodb+srv://ermobiprd:franCisco369@cluster0.46soj.azure.mongodb.net/test?retryWrites=true&w=majority",
     "jwtSecret": "minion13"
 }
+=======
+    "mongoURI": "Your mongo db ID",
+    "jwtSecret": "Your jwtSecret"
+}
+>>>>>>> 7d4fe1a44082864dc5407be9d7cfefaa8066a3b9
