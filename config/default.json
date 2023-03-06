@@ -1,4 +1,4 @@
 {
-    "mongoURI": "Your mongo db ID",
-    "jwtSecret": "Your jwtSecret"
+  "mongoURI": "mongodb+srv://ermobiprd:franCisco369@cluster0.46soj.azure.mongodb.net/contactproj?retryWrites=true&w=majority",
+  "jwtSecret": "banana69"
 }

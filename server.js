@@ -1,11 +1,9 @@
 const express = require('express')
-const connectDB = require('./config/db')
+const connectDB = require('./config/db.js')
 // import express from 'express';
 // import connectDB from './config/db.js';
 // import morgan from 'morgan';
 
-const express = require('express')
-const connectDB = require('./config/db')
 const morgan = require('morgan')
 
 const app = express()
